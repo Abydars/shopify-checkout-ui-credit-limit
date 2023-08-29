@@ -1,7 +1,9 @@
 (() => {
   var __create = Object.create;
   var __defProp = Object.defineProperty;
+  var __defProps = Object.defineProperties;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
   var __getOwnPropNames = Object.getOwnPropertyNames;
   var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __getProtoOf = Object.getPrototypeOf;
@@ -19,6 +21,7 @@
       }
     return a;
   };
+  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   var __objRest = (source, exclude) => {
     var target = {};
     for (var prop in source)
@@ -719,7 +722,7 @@
             }
             return ReactElement(element.type, key, ref, self, source, owner, props);
           }
-          function isValidElement(object) {
+          function isValidElement2(object) {
             return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
           }
           var SEPARATOR = ".";
@@ -781,7 +784,7 @@
                   return c;
                 });
               } else if (mappedChild != null) {
-                if (isValidElement(mappedChild)) {
+                if (isValidElement2(mappedChild)) {
                   mappedChild = cloneAndReplaceKey(
                     mappedChild,
                     // Keep both the (mapped) and old keys if they differ, just as
@@ -867,7 +870,7 @@
             }) || [];
           }
           function onlyChild(children) {
-            if (!isValidElement(children)) {
+            if (!isValidElement2(children)) {
               {
                 throw Error("React.Children.only expected to receive a single React element child.");
               }
@@ -1116,7 +1119,7 @@
             }
             return false;
           }
-          function memo(type, compare) {
+          function memo2(type, compare) {
             {
               if (!isValidElementType(type)) {
                 error("memo: The first argument must be a component. Instead received: %s", type === null ? "null" : typeof type);
@@ -1154,7 +1157,7 @@
             }
             return dispatcher;
           }
-          function useContext2(Context, unstable_observedBits) {
+          function useContext3(Context, unstable_observedBits) {
             var dispatcher = resolveDispatcher();
             {
               if (unstable_observedBits !== void 0) {
@@ -1171,7 +1174,7 @@
             }
             return dispatcher.useContext(Context, unstable_observedBits);
           }
-          function useState2(initialState) {
+          function useState3(initialState) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useState(initialState);
           }
@@ -1179,7 +1182,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useReducer(reducer, initialArg, init);
           }
-          function useRef2(initialValue) {
+          function useRef3(initialValue) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useRef(initialValue);
           }
@@ -1195,7 +1198,7 @@
             var dispatcher = resolveDispatcher();
             return dispatcher.useCallback(callback, deps);
           }
-          function useMemo3(create, deps) {
+          function useMemo4(create, deps) {
             var dispatcher = resolveDispatcher();
             return dispatcher.useMemo(create, deps);
           }
@@ -1576,11 +1579,11 @@
             if (Array.isArray(node)) {
               for (var i = 0; i < node.length; i++) {
                 var child = node[i];
-                if (isValidElement(child)) {
+                if (isValidElement2(child)) {
                   validateExplicitKey(child, parentType);
                 }
               }
-            } else if (isValidElement(node)) {
+            } else if (isValidElement2(node)) {
               if (node._store) {
                 node._store.validated = true;
               }
@@ -1591,7 +1594,7 @@
                   var iterator = iteratorFn.call(node);
                   var step;
                   while (!(step = iterator.next()).done) {
-                    if (isValidElement(step.value)) {
+                    if (isValidElement2(step.value)) {
                       validateExplicitKey(step.value, parentType);
                     }
                   }
@@ -1732,14 +1735,14 @@
           var createElement$1 = createElementWithValidation;
           var cloneElement$1 = cloneElementWithValidation;
           var createFactory = createFactoryWithValidation;
-          var Children = {
+          var Children2 = {
             map: mapChildren,
             forEach: forEachChildren,
             count: countChildren,
             toArray,
             only: onlyChild
           };
-          exports.Children = Children;
+          exports.Children = Children2;
           exports.Component = Component2;
           exports.PureComponent = PureComponent;
           exports.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED = ReactSharedInternals;
@@ -1749,19 +1752,19 @@
           exports.createFactory = createFactory;
           exports.createRef = createRef;
           exports.forwardRef = forwardRef;
-          exports.isValidElement = isValidElement;
+          exports.isValidElement = isValidElement2;
           exports.lazy = lazy;
-          exports.memo = memo;
+          exports.memo = memo2;
           exports.useCallback = useCallback;
-          exports.useContext = useContext2;
+          exports.useContext = useContext3;
           exports.useDebugValue = useDebugValue;
           exports.useEffect = useEffect3;
           exports.useImperativeHandle = useImperativeHandle;
           exports.useLayoutEffect = useLayoutEffect;
-          exports.useMemo = useMemo3;
+          exports.useMemo = useMemo4;
           exports.useReducer = useReducer;
-          exports.useRef = useRef2;
-          exports.useState = useState2;
+          exports.useRef = useRef3;
+          exports.useState = useState3;
           exports.version = ReactVersion;
         })();
       }
@@ -16340,7 +16343,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
           {
             propTypesMisspellWarningShown = false;
           }
-          function isValidElement(object) {
+          function isValidElement2(object) {
             {
               return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
             }
@@ -16407,11 +16410,11 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               if (Array.isArray(node)) {
                 for (var i = 0; i < node.length; i++) {
                   var child = node[i];
-                  if (isValidElement(child)) {
+                  if (isValidElement2(child)) {
                     validateExplicitKey(child, parentType);
                   }
                 }
-              } else if (isValidElement(node)) {
+              } else if (isValidElement2(node)) {
                 if (node._store) {
                   node._store.validated = true;
                 }
@@ -16422,7 +16425,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
                     var iterator = iteratorFn.call(node);
                     var step;
                     while (!(step = iterator.next()).done) {
-                      if (isValidElement(step.value)) {
+                      if (isValidElement2(step.value)) {
                         validateExplicitKey(step.value, parentType);
                       }
                     }
@@ -16547,10 +16550,10 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
               return jsxWithValidation(type, props, key, false);
             }
           }
-          var jsx4 = jsxWithValidationDynamic;
-          var jsxs = jsxWithValidationStatic;
-          exports.jsx = jsx4;
-          exports.jsxs = jsxs;
+          var jsx5 = jsxWithValidationDynamic;
+          var jsxs2 = jsxWithValidationStatic;
+          exports.jsx = jsx5;
+          exports.jsxs = jsxs2;
         })();
       }
     }
@@ -16568,8 +16571,13 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }
   });
 
-  // extensions/checkout-ui/src/Age.jsx
-  var import_react10 = __toESM(require_react());
+  // extensions/checkout-ui/src/Checkout.jsx
+  var import_react14 = __toESM(require_react());
+
+  // node_modules/@remote-ui/core/build/esm/component.mjs
+  function createRemoteComponent(componentType) {
+    return componentType;
+  }
 
   // node_modules/@remote-ui/core/build/esm/types.mjs
   var ACTION_MOUNT = 0;
@@ -17195,8 +17203,14 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
   // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/extension.mjs
   var extension = createExtensionRegistrationFunction();
 
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Banner/Banner.mjs
+  var Banner = createRemoteComponent("Banner");
+
+  // node_modules/@shopify/ui-extensions/build/esm/surfaces/checkout/components/Link/Link.mjs
+  var Link = createRemoteComponent("Link");
+
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/render.mjs
-  var import_react3 = __toESM(require_react(), 1);
+  var import_react5 = __toESM(require_react(), 1);
 
   // node_modules/@remote-ui/react/build/esm/reconciler.mjs
   var import_react_reconciler = __toESM(require_react_reconciler(), 1);
@@ -17359,20 +17373,97 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
     }), container, null, callback);
   }
 
-  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/context.mjs
+  // node_modules/@remote-ui/react/build/esm/components.mjs
+  var import_react3 = __toESM(require_react(), 1);
+  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+
+  // node_modules/@remote-ui/react/build/esm/hooks/render.mjs
   var import_react2 = __toESM(require_react(), 1);
-  var ExtensionApiContext = /* @__PURE__ */ (0, import_react2.createContext)(null);
+  function useRender() {
+    const render3 = (0, import_react2.useContext)(RenderContext);
+    if (render3 == null) {
+      throw new Error("No remote-ui Render instance found in context");
+    }
+    return render3;
+  }
+
+  // node_modules/@remote-ui/react/build/esm/components.mjs
+  function createRemoteReactComponent(componentType, {
+    fragmentProps
+  } = {}) {
+    if (!fragmentProps || !fragmentProps.length) {
+      return componentType;
+    }
+    const wrapper = createComponentWrapper(componentType, fragmentProps);
+    wrapper.displayName = componentType;
+    return wrapper;
+  }
+  function createComponentWrapper(componentType, fragmentProps) {
+    const Component2 = componentType;
+    return /* @__PURE__ */ (0, import_react3.memo)(function ComponentWrapper(_a) {
+      var _b = _a, {
+        children: externalChildren = []
+      } = _b, externalProps = __objRest(_b, [
+        "children"
+      ]);
+      const fragments = (0, import_react3.useRef)({});
+      const {
+        root,
+        reconciler
+      } = useRender();
+      const {
+        props,
+        children
+      } = (0, import_react3.useMemo)(() => {
+        const portals = [];
+        const props2 = {};
+        for (const key of Object.keys(externalProps)) {
+          const element = externalProps[key];
+          if (fragmentProps.includes(key) && /* @__PURE__ */ (0, import_react3.isValidElement)(element)) {
+            const currentFragment = fragments.current[key];
+            const fragment = isRemoteFragment(currentFragment) ? currentFragment : root.createFragment();
+            fragments.current[key] = fragment;
+            Object.assign(fragment, {
+              createText(...args) {
+                return root.createText(...args);
+              },
+              createComponent(type, ...args) {
+                return root.createComponent(type, ...args);
+              }
+            });
+            const portal = reconciler.createPortal(element, fragment, null, null);
+            portals.push(portal);
+            props2[key] = fragment;
+          } else {
+            props2[key] = element;
+            delete fragments.current[key];
+          }
+        }
+        return {
+          props: props2,
+          children: [...import_react3.Children.toArray(externalChildren), ...portals]
+        };
+      }, [externalChildren, externalProps, root, reconciler, fragments]);
+      return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Component2, __spreadProps(__spreadValues({}, props), {
+        children
+      }));
+    });
+  }
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/context.mjs
+  var import_react4 = __toESM(require_react(), 1);
+  var ExtensionApiContext = /* @__PURE__ */ (0, import_react4.createContext)(null);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/render.mjs
-  var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
   function reactExtension(target, render3) {
     return extension(target, (root, api) => __async(this, null, function* () {
       const element = yield render3(api);
       yield new Promise((resolve, reject) => {
         try {
-          render(/* @__PURE__ */ (0, import_jsx_runtime2.jsx)(ExtensionApiContext.Provider, {
+          render(/* @__PURE__ */ (0, import_jsx_runtime3.jsx)(ExtensionApiContext.Provider, {
             value: api,
-            children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(ErrorBoundary, {
+            children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(ErrorBoundary, {
               children: element
             })
           }), root, () => {
@@ -17385,7 +17476,7 @@ For more info, visit https://reactjs.org/link/mock-scheduler`);
       });
     }));
   }
-  var ErrorBoundary = class extends import_react3.Component {
+  var ErrorBoundary = class extends import_react5.Component {
     constructor(...args) {
       super(...args);
       this.state = {
@@ -17412,8 +17503,16 @@ ${errorInfo.componentStack}`);
     }
   };
 
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Banner/Banner.mjs
+  var Banner2 = createRemoteReactComponent(Banner);
+
+  // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/components/Link/Link.mjs
+  var Link2 = createRemoteReactComponent(Link, {
+    fragmentProps: ["overlay"]
+  });
+
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/api.mjs
-  var import_react5 = __toESM(require_react(), 1);
+  var import_react9 = __toESM(require_react(), 1);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/errors.mjs
   var CheckoutUIExtensionError = class extends Error {
@@ -17431,7 +17530,7 @@ ${errorInfo.componentStack}`);
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/api.mjs
   function useApi(_target) {
-    const api = (0, import_react5.useContext)(ExtensionApiContext);
+    const api = (0, import_react9.useContext)(ExtensionApiContext);
     if (api == null) {
       throw new CheckoutUIExtensionError("You can only call this hook when running as a UI extension.");
     }
@@ -17439,10 +17538,10 @@ ${errorInfo.componentStack}`);
   }
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/subscription.mjs
-  var import_react6 = __toESM(require_react(), 1);
+  var import_react10 = __toESM(require_react(), 1);
   function useSubscription(subscription) {
-    const [, setValue] = (0, import_react6.useState)(subscription.current);
-    (0, import_react6.useEffect)(() => {
+    const [, setValue] = (0, import_react10.useState)(subscription.current);
+    (0, import_react10.useEffect)(() => {
       let didUnsubscribe = false;
       const checkForUpdates = (newValue) => {
         if (didUnsubscribe) {
@@ -17469,15 +17568,15 @@ ${errorInfo.componentStack}`);
   }
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/buyer-journey.mjs
-  var import_react7 = __toESM(require_react(), 1);
+  var import_react11 = __toESM(require_react(), 1);
   function useBuyerJourneyIntercept(interceptor) {
     const api = useApi();
     if (!("buyerJourney" in api)) {
       throw new ExtensionHasNoMethodError("buyerJourney", api.extension.target);
     }
-    const interceptorRef = (0, import_react7.useRef)(interceptor);
+    const interceptorRef = (0, import_react11.useRef)(interceptor);
     interceptorRef.current = interceptor;
-    return (0, import_react7.useEffect)(() => {
+    return (0, import_react11.useEffect)(() => {
       const teardownPromise = api.buyerJourney.intercept((interceptorProps) => interceptorRef.current(interceptorProps));
       return () => {
         teardownPromise.then((teardown) => teardown()).catch(() => {
@@ -17492,10 +17591,10 @@ ${errorInfo.componentStack}`);
   }
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/app-metafields.mjs
-  var import_react8 = __toESM(require_react(), 1);
+  var import_react12 = __toESM(require_react(), 1);
   function useAppMetafields(filters = {}) {
     const appMetafields = useSubscription(useApi().appMetafields);
-    return (0, import_react8.useMemo)(() => {
+    return (0, import_react12.useMemo)(() => {
       if (filters.key && !filters.namespace) {
         throw new CheckoutUIExtensionError("You must pass in a namespace with a key");
       }
@@ -17515,7 +17614,7 @@ ${errorInfo.componentStack}`);
   }
 
   // node_modules/@shopify/ui-extensions-react/build/esm/surfaces/checkout/hooks/payment-options.mjs
-  var import_react9 = __toESM(require_react(), 1);
+  var import_react13 = __toESM(require_react(), 1);
   function useSelectedPaymentOptions() {
     const api = useApi();
     if (!("selectedPaymentOptions" in api) || !("availablePaymentOptions" in api)) {
@@ -17523,7 +17622,7 @@ ${errorInfo.componentStack}`);
     }
     const selectedPaymentOptions = useSubscription(api.selectedPaymentOptions);
     const availablePaymentOptions = useSubscription(api.availablePaymentOptions);
-    return (0, import_react9.useMemo)(() => {
+    return (0, import_react13.useMemo)(() => {
       const availablePaymentOptionsMap = {};
       for (const option of availablePaymentOptions) {
         availablePaymentOptionsMap[option.handle] = option;
@@ -17538,25 +17637,32 @@ ${errorInfo.componentStack}`);
     }, [availablePaymentOptions, selectedPaymentOptions]);
   }
 
-  // extensions/checkout-ui/src/Age.jsx
-  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
-  var Age_default = reactExtension("purchase.checkout.actions.render-before", () => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(App, {}));
+  // extensions/checkout-ui/src/Checkout.jsx
+  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
+  var Checkout_default = reactExtension("purchase.checkout.block.render", () => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(App, {}));
   function App() {
     const canBlockProgress = useExtensionCapability("block_progress");
     const options = useSelectedPaymentOptions();
     const allMetaFields = useAppMetafields({ namespace: "custom" });
     const isDeferred = options.some((option) => option.type === "deferred");
     const cost = useTotalAmount();
+    const [showError, setShowError] = (0, import_react14.useState)(false);
     let companyMetaFields = {};
+    console.log(allMetaFields, options, isDeferred);
     allMetaFields.map((m) => {
-      if (m.target.type === "company") {
+      if (m.target.type === "companyLocation") {
         companyMetaFields[m.metafield.key] = m.metafield.value;
       }
     });
+    if (!companyMetaFields["credits_spent"])
+      companyMetaFields["credits_spent"] = 0;
+    if (!companyMetaFields["available_credit_limit"])
+      companyMetaFields["available_credit_limit"] = 0;
     useBuyerJourneyIntercept(({ canBlockProgress: canBlockProgress2 }) => {
+      setShowError(false);
       if (canBlockProgress2 && isDeferred) {
         const available = parseFloat(companyMetaFields["available_credit_limit"]);
-        const spent = parseFloat(companyMetaFields["credit_limit"]);
+        const spent = parseFloat(companyMetaFields["credits_spent"]);
         const orderTotal = cost.amount;
         const currentAvailable = available - spent;
         console.log({
@@ -17565,14 +17671,15 @@ ${errorInfo.componentStack}`);
           orderTotal,
           currentAvailable
         });
-        if (currentAvailable < orderTotal) {
+        if (available > 0 && currentAvailable < orderTotal) {
+          setShowError(true);
           return {
             behavior: "block",
-            reason: `Credit limit not available`,
+            reason: `Credit Limit Exceeded!`,
             errors: [
               {
                 // Show a validation error on the page
-                message: "Credit limit is not available"
+                message: `Credit Limit Exceeded!`
               }
             ]
           };
@@ -17584,6 +17691,17 @@ ${errorInfo.componentStack}`);
         }
       };
     });
-    return null;
+    if (showError) {
+      return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(Banner2, { status: "critical", children: [
+        "Credit Limit Exceeded, To place this order, please pay off existing orders to purchase more gear. You can see your ",
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link2, { to: "https://shopify.com/80518021434/account/orders", external: true, children: "order here" }),
+        " Contact customer support if you have questions or concerns. Call ",
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link2, { to: "tel:8555103745", external: true, children: "855 510 3745" }),
+        " Email ",
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Link2, { href: "mailto:heythere@epik.us.com", external: true, children: "heythere@epik.us.com" })
+      ] });
+    } else {
+      return null;
+    }
   }
 })();

@@ -1,13 +1,13 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 name = "Credit Limit Checkout UI"
-client_id = "623218a6f43cd53dcc53056e75ef34e3"
+client_id = "{INSERT YOUR APP CLIENT ID HERE}"
 application_url = "https://shopify.dev/apps/default-app-home"
 embedded = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_locations, read_metaobject_definitions, read_metaobjects, unauthenticated_read_customers, unauthenticated_read_metaobjects, customer_read_customers, read_customers"
+scopes = "read_locations,read_metaobject_definitions,read_metaobjects,unauthenticated_read_customers,unauthenticated_read_metaobjects,customer_read_customers,read_customers"
 
 [auth]
 redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
